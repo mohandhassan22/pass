@@ -30,7 +30,6 @@
       position: relative;
     }
 
-    /* animated background grid */
     body::before {
       content: '';
       position: fixed;
@@ -48,7 +47,6 @@
       100% { background-position: 40px 40px; }
     }
 
-    /* glowing orbs */
     .orb {
       position: fixed;
       border-radius: 50%;
@@ -60,7 +58,6 @@
       width: 300px; height: 300px;
       background: rgba(0,200,83,.12);
       top: -80px; left: -80px;
-      animation-delay: 0s;
     }
     .orb-2 {
       width: 250px; height: 250px;
@@ -74,7 +71,6 @@
       50%      { transform: scale(1.2); opacity: 1; }
     }
 
-    /* card */
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -96,7 +92,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* top glow line */
     .card::before {
       content: '';
       position: absolute;
@@ -106,7 +101,6 @@
       border-radius: 50%;
     }
 
-    /* logo area */
     .logo-wrap {
       display: flex;
       flex-direction: column;
@@ -127,10 +121,7 @@
       box-shadow: 0 0 30px rgba(0,200,83,.15);
     }
 
-    .logo-icon svg {
-      width: 30px; height: 30px;
-      color: var(--green);
-    }
+    .logo-icon svg { width: 30px; height: 30px; color: var(--green); }
 
     .logo-icon::after {
       content: '';
@@ -141,22 +132,10 @@
       pointer-events: none;
     }
 
-    .logo-title {
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--text);
-      letter-spacing: .5px;
-    }
-
+    .logo-title { font-size: 22px; font-weight: 900; color: var(--text); letter-spacing: .5px; }
     .logo-title span { color: var(--green); }
+    .logo-sub { font-size: 13px; color: var(--muted); margin-top: -6px; }
 
-    .logo-sub {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: -6px;
-    }
-
-    /* label */
     label {
       display: block;
       font-size: 13px;
@@ -166,16 +145,11 @@
       letter-spacing: .3px;
     }
 
-    /* input group */
-    .input-group {
-      position: relative;
-      margin-bottom: 20px;
-    }
+    .input-group { position: relative; margin-bottom: 20px; }
 
     .input-icon {
       position: absolute;
-      right: 14px;
-      top: 50%;
+      right: 14px; top: 50%;
       transform: translateY(-50%);
       color: var(--muted);
       pointer-events: none;
@@ -184,33 +158,26 @@
 
     .toggle-eye {
       position: absolute;
-      left: 14px;
-      top: 50%;
+      left: 14px; top: 50%;
       transform: translateY(-50%);
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--muted);
-      padding: 4px;
-      display: flex;
+      background: none; border: none;
+      cursor: pointer; color: var(--muted);
+      padding: 4px; display: flex;
       transition: color .2s;
     }
     .toggle-eye:hover { color: var(--green); }
 
-    input[type="password"],
-    input[type="text"] {
+    input[type="password"], input[type="text"] {
       width: 100%;
       background: rgba(0,0,0,.4);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 14px 44px 14px 44px;
       font-family: 'Cairo', sans-serif;
-      font-size: 15px;
-      color: var(--text);
+      font-size: 15px; color: var(--text);
       outline: none;
       transition: border-color .3s, box-shadow .3s;
-      direction: ltr;
-      text-align: right;
+      direction: ltr; text-align: right;
     }
 
     input:focus {
@@ -220,70 +187,51 @@
 
     input:focus ~ .input-icon { color: var(--green); }
 
-    /* strength bar */
-    .strength-wrap {
-      margin-top: -12px;
-      margin-bottom: 20px;
-    }
+    .strength-wrap { margin-top: -12px; margin-bottom: 20px; }
 
     .strength-bar {
-      height: 3px;
-      background: var(--border);
-      border-radius: 10px;
-      overflow: hidden;
+      height: 3px; background: var(--border);
+      border-radius: 10px; overflow: hidden;
     }
 
     .strength-fill {
-      height: 100%;
-      width: 0%;
+      height: 100%; width: 0%;
       border-radius: 10px;
       transition: width .4s, background .4s;
     }
 
     .strength-label {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 5px;
-      text-align: left;
-      direction: ltr;
+      font-size: 11px; color: var(--muted);
+      margin-top: 5px; text-align: left; direction: ltr;
     }
 
-    /* button */
     button.submit-btn {
-      width: 100%;
-      padding: 15px;
+      width: 100%; padding: 15px;
       background: linear-gradient(135deg, var(--green-d), var(--green));
-      border: none;
-      border-radius: 12px;
+      border: none; border-radius: 12px;
       font-family: 'Cairo', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: #000;
-      cursor: pointer;
-      margin-top: 8px;
-      position: relative;
-      overflow: hidden;
-      transition: transform .2s, box-shadow .2s;
+      font-size: 16px; font-weight: 700; color: #000;
+      cursor: pointer; margin-top: 8px;
+      position: relative; overflow: hidden;
+      transition: transform .2s, box-shadow .2s, opacity .2s;
       box-shadow: 0 4px 20px rgba(0,200,83,.25);
     }
 
-    button.submit-btn:hover {
+    button.submit-btn:hover:not(:disabled) {
       transform: translateY(-1px);
       box-shadow: 0 8px 28px rgba(0,200,83,.35);
     }
-
-    button.submit-btn:active { transform: translateY(0); }
+    button.submit-btn:active:not(:disabled) { transform: translateY(0); }
+    button.submit-btn:disabled { opacity: .45; cursor: not-allowed; }
 
     button.submit-btn::after {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: linear-gradient(180deg, rgba(255,255,255,.12), transparent);
     }
 
     button.submit-btn .btn-text { position: relative; z-index: 1; }
 
-    /* spinner */
     .spinner {
       display: none;
       width: 18px; height: 18px;
@@ -292,59 +240,62 @@
       border-radius: 50%;
       animation: spin .6s linear infinite;
       margin: auto;
+      position: relative; z-index: 1;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* message */
     #message {
-      margin-top: 18px;
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-size: 13.5px;
-      font-weight: 600;
-      text-align: center;
-      display: none;
+      margin-top: 18px; padding: 12px 16px;
+      border-radius: 10px; font-size: 13.5px;
+      font-weight: 600; text-align: center;
+      display: none; white-space: pre-line;
       animation: fadeIn .3s ease;
     }
-    @keyframes fadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(-6px); }
+      to   { opacity:1; transform:none; }
+    }
 
     #message.success {
       background: rgba(0,200,83,.1);
       border: 1px solid rgba(0,200,83,.25);
-      color: var(--green-g);
-      display: block;
+      color: var(--green-g); display: block;
     }
     #message.error {
       background: rgba(255,60,60,.08);
       border: 1px solid rgba(255,60,60,.2);
-      color: #ff6b6b;
-      display: block;
+      color: #ff6b6b; display: block;
     }
 
-    /* requirements list */
     .req-list {
-      margin-top: -8px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+      margin-top: -8px; margin-bottom: 20px;
+      display: flex; flex-wrap: wrap; gap: 6px;
     }
 
     .req {
-      font-size: 11.5px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      font-size: 11.5px; color: var(--muted);
+      display: flex; align-items: center; gap: 4px;
       transition: color .3s;
     }
-
     .req.met { color: var(--green); }
-
     .req-dot {
       width: 6px; height: 6px;
+      border-radius: 50%; background: currentColor; flex-shrink: 0;
+    }
+
+    /* session loader */
+    #session-loader {
+      text-align: center; padding: 8px 0 24px;
+      color: var(--muted); font-size: 13px;
+      display: flex; align-items: center;
+      justify-content: center; gap: 10px;
+    }
+    #session-loader .mini-spin {
+      width: 14px; height: 14px;
+      border: 2px solid var(--border);
+      border-top-color: var(--green);
       border-radius: 50%;
-      background: currentColor;
+      animation: spin .7s linear infinite;
       flex-shrink: 0;
     }
   </style>
@@ -367,51 +318,64 @@
     <div class="logo-sub">إعادة تعيين كلمة المرور</div>
   </div>
 
-  <label for="password">كلمة المرور الجديدة</label>
-  <div class="input-group">
-    <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-    </svg>
-    <input type="password" id="password" placeholder="أدخل كلمة مرور قوية" autocomplete="new-password" oninput="checkStrength(this.value)">
-    <button class="toggle-eye" type="button" onclick="toggleVis('password', this)" title="إظهار/إخفاء">
-      <svg id="eye-pw" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+  <!-- Waiting for recovery session -->
+  <div id="session-loader">
+    <div class="mini-spin"></div>
+    <span>جارٍ التحقق من الرابط...</span>
+  </div>
+
+  <!-- Form shown only after valid session -->
+  <div id="form-body" style="display:none">
+
+    <label for="password">كلمة المرور الجديدة</label>
+    <div class="input-group">
+      <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
       </svg>
-    </button>
-  </div>
+      <input type="password" id="password" placeholder="أدخل كلمة مرور قوية"
+             autocomplete="new-password" oninput="checkStrength(this.value)">
+      <button class="toggle-eye" type="button" onclick="toggleVis('password', this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+    </div>
 
-  <div class="strength-wrap">
-    <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
-    <div class="strength-label" id="strength-label"></div>
-  </div>
+    <div class="strength-wrap">
+      <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+      <div class="strength-label" id="strength-label"></div>
+    </div>
 
-  <div class="req-list">
-    <span class="req" id="req-len"><span class="req-dot"></span>٨ أحرف على الأقل</span>
-    <span class="req" id="req-upper"><span class="req-dot"></span>حرف كبير</span>
-    <span class="req" id="req-num"><span class="req-dot"></span>رقم</span>
-    <span class="req" id="req-sym"><span class="req-dot"></span>رمز خاص</span>
-  </div>
+    <div class="req-list">
+      <span class="req" id="req-len"><span class="req-dot"></span>٨ أحرف على الأقل</span>
+      <span class="req" id="req-upper"><span class="req-dot"></span>حرف كبير</span>
+      <span class="req" id="req-num"><span class="req-dot"></span>رقم</span>
+      <span class="req" id="req-sym"><span class="req-dot"></span>رمز خاص</span>
+    </div>
 
-  <label for="confirm">تأكيد كلمة المرور</label>
-  <div class="input-group">
-    <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-    </svg>
-    <input type="password" id="confirm" placeholder="أعد إدخال كلمة المرور" autocomplete="new-password">
-    <button class="toggle-eye" type="button" onclick="toggleVis('confirm', this)" title="إظهار/إخفاء">
-      <svg id="eye-cf" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+    <label for="confirm">تأكيد كلمة المرور</label>
+    <div class="input-group">
+      <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
       </svg>
-    </button>
-  </div>
+      <input type="password" id="confirm" placeholder="أعد إدخال كلمة المرور" autocomplete="new-password">
+      <button class="toggle-eye" type="button" onclick="toggleVis('confirm', this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+    </div>
 
-  <button class="submit-btn" onclick="resetPassword()">
-    <span class="btn-text" id="btn-text">تحديث كلمة المرور</span>
-    <div class="spinner" id="spinner"></div>
-  </button>
+    <button class="submit-btn" id="submit-btn" onclick="resetPassword()">
+      <span class="btn-text" id="btn-text">تحديث كلمة المرور</span>
+      <div class="spinner" id="spinner"></div>
+    </button>
+
+  </div><!-- /form-body -->
 
   <p id="message"></p>
-</div>
+
+</div><!-- /card -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
@@ -421,30 +385,58 @@
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml5Z3doYXBjcGRtc2FzcWxmZWx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzNDk5MDQsImV4cCI6MjA4NjkyNTkwNH0.jqU1fEc9kBkXcCfazH6aTnS2XWWzPv0bbixHZgjtrnQ"
   );
 
-  /* eye toggle */
+  /* ─── Session Detection ─── */
+  let sessionResolved = false;
+
+  _supabase.auth.onAuthStateChange((event, session) => {
+    if (sessionResolved) return;
+    sessionResolved = true;
+
+    const loader = document.getElementById('session-loader');
+    const form   = document.getElementById('form-body');
+
+    loader.style.display = 'none';
+
+    if (event === 'PASSWORD_RECOVERY' || (event === 'SIGNED_IN' && session)) {
+      // ✅ Valid recovery session — show the form
+      form.style.display = 'block';
+    } else {
+      // ❌ No valid session — link expired or invalid
+      showMsg('انتهت صلاحية رابط إعادة التعيين أو غير صالح.\nالرجاء طلب رابط جديد من صفحة تسجيل الدخول.', 'error');
+    }
+  });
+
+  // Fallback: if no auth event fires within 5 seconds
+  setTimeout(() => {
+    if (sessionResolved) return;
+    sessionResolved = true;
+    document.getElementById('session-loader').style.display = 'none';
+    showMsg('لم يتم التعرف على الجلسة.\nتأكد من فتح الرابط مباشرةً من الإيميل.', 'error');
+  }, 5000);
+
+  /* ─── Eye Toggle ─── */
   function toggleVis(id, btn) {
-    const inp = document.getElementById(id);
-    const isHidden = inp.type === 'password';
-    inp.type = isHidden ? 'text' : 'password';
-    btn.querySelector('svg').style.opacity = isHidden ? '.5' : '1';
+    const inp    = document.getElementById(id);
+    const hidden = inp.type === 'password';
+    inp.type     = hidden ? 'text' : 'password';
+    btn.querySelector('svg').style.opacity = hidden ? '.4' : '1';
   }
 
-  /* strength check */
+  /* ─── Password Strength ─── */
   function checkStrength(val) {
     const len   = val.length >= 8;
     const upper = /[A-Z]/.test(val);
     const num   = /[0-9]/.test(val);
     const sym   = /[^A-Za-z0-9]/.test(val);
 
-    toggle('req-len',   len);
-    toggle('req-upper', upper);
-    toggle('req-num',   num);
-    toggle('req-sym',   sym);
+    setReq('req-len',   len);
+    setReq('req-upper', upper);
+    setReq('req-num',   num);
+    setReq('req-sym',   sym);
 
-    const score = [len, upper, num, sym].filter(Boolean).length;
-    const fill  = document.getElementById('strength-fill');
-    const label = document.getElementById('strength-label');
-
+    const score  = [len, upper, num, sym].filter(Boolean).length;
+    const fill   = document.getElementById('strength-fill');
+    const label  = document.getElementById('strength-label');
     const levels = [
       { w: '0%',   bg: 'transparent', lbl: '' },
       { w: '25%',  bg: '#ff4444',     lbl: 'ضعيفة' },
@@ -452,37 +444,31 @@
       { w: '75%',  bg: '#ffeb3b',     lbl: 'جيدة' },
       { w: '100%', bg: '#00c853',     lbl: 'قوية جداً ✓' },
     ];
-
     fill.style.width      = levels[score].w;
     fill.style.background = levels[score].bg;
     label.textContent     = levels[score].lbl;
     label.style.color     = levels[score].bg;
   }
 
-  function toggle(id, met) {
+  function setReq(id, met) {
     document.getElementById(id).classList.toggle('met', met);
   }
 
-  /* reset password */
+  /* ─── Reset Password ─── */
   async function resetPassword() {
     const password = document.getElementById('password').value;
     const confirm  = document.getElementById('confirm').value;
-    const msg      = document.getElementById('message');
 
-    msg.className = '';
-    msg.style.display = 'none';
+    clearMsg();
 
     if (!password) {
-      showMsg('الرجاء إدخال كلمة المرور', 'error');
-      return;
+      showMsg('الرجاء إدخال كلمة المرور', 'error'); return;
     }
     if (password.length < 8) {
-      showMsg('كلمة المرور قصيرة جداً — يجب أن تكون ٨ أحرف على الأقل', 'error');
-      return;
+      showMsg('كلمة المرور قصيرة جداً — يجب أن تكون ٨ أحرف على الأقل', 'error'); return;
     }
     if (password !== confirm) {
-      showMsg('كلمتا المرور غير متطابقتين', 'error');
-      return;
+      showMsg('كلمتا المرور غير متطابقتين', 'error'); return;
     }
 
     setLoading(true);
@@ -498,18 +484,28 @@
       document.getElementById('password').value = '';
       document.getElementById('confirm').value  = '';
       checkStrength('');
+      // Redirect after 2s (uncomment and set your login page URL)
+      // setTimeout(() => { window.location.href = '/index.html'; }, 2000);
     }
   }
 
+  /* ─── Helpers ─── */
   function setLoading(on) {
-    document.getElementById('btn-text').style.display = on ? 'none' : '';
+    document.getElementById('btn-text').style.display = on ? 'none'  : '';
     document.getElementById('spinner').style.display  = on ? 'block' : 'none';
+    document.getElementById('submit-btn').disabled    = on;
   }
 
   function showMsg(text, type) {
-    const msg = document.getElementById('message');
-    msg.textContent  = text;
-    msg.className    = type;
+    const msg     = document.getElementById('message');
+    msg.textContent = text;
+    msg.className   = type;
+  }
+
+  function clearMsg() {
+    const msg       = document.getElementById('message');
+    msg.className   = '';
+    msg.style.display = 'none';
   }
 </script>
 </body>
